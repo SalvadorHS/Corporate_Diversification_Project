@@ -1,0 +1,176 @@
+library("lavaan")
+library("semTools")
+library("tidyverse")
+library("Hmisc")
+library("ggplot2")
+library("semPlot")
+
+SThesisModel <- 'DiversificationFactor   =~  IndicePropuesto + Shannon + IIHH
+                 SizeFactor              =~  Tamano
+                 PerformanceFactor       =~  Investrat 
+              
+              DiversificationFactor ~ SizeFactor+PerformanceFactor
+            
+'
+
+MModel <- 'DiversificationFactor   =~  ProposedIndex + Shannon + IIHH  
+              AssetTurnoverFactor  =~  AssetTurnover
+              CashHoldingFactor    =~  CashHoldings 
+              SizeFactor           =~  Size
+              PerformanceFactor    =~  ROA + ROE
+
+'
+TModel <- 'DiversificationFactor   =~  ProposedIndex + Shannon + IIHH  
+              AssetTurnoverFactor  =~  AssetTurnover
+              CashHoldingFactor    =~  CashHoldings 
+              SizeFactor           =~  Size
+              PerformanceFactor    =~  ROA +ROE 
+              
+              DiversificationFactor ~ AssetTurnoverFactor+ CashHoldingFactor+SizeFactor+PerformanceFactor
+              PerformanceFactor     ~ AssetTurnoverFactor+ CashHoldingFactor+SizeFactor
+            
+            DiversificationFactor  ~~  0*CashHoldingFactor+0*SizeFactor+0*AssetTurnoverFactor+0*PerformanceFactor
+            PerformanceFactor      ~~  0*CashHoldingFactor+0*SizeFactor+0*AssetTurnoverFactor
+            AssetTurnoverFactor    ~~  0*CashHoldingFactor+0*SizeFactor
+            CashHoldingFactor      ~~  0*SizeFactor
+'
+
+AModel <- 'DiversificationFactor   =~  ProposedIndex + Shannon + IIHH  
+              AssetTurnoverFactor  =~  AssetTurnover
+              CashHoldingFactor    =~  CashHoldings 
+              SizeFactor           =~  Size
+              PerformanceFactor    =~  ROA  
+              
+              DiversificationFactor ~ AssetTurnoverFactor+ CashHoldingFactor+SizeFactor+PerformanceFactor
+              PerformanceFactor     ~ AssetTurnoverFactor+ CashHoldingFactor+SizeFactor
+            
+            DiversificationFactor  ~~  0*CashHoldingFactor+0*SizeFactor+0*AssetTurnoverFactor+0*PerformanceFactor
+            PerformanceFactor      ~~  0*CashHoldingFactor+0*SizeFactor+0*AssetTurnoverFactor
+            AssetTurnoverFactor    ~~  0*CashHoldingFactor+0*SizeFactor
+            CashHoldingFactor      ~~  0*SizeFactor
+'
+
+UModel <- 'DiversificationFactor   =~  ProposedIndex + Shannon + IIHH  
+              AssetTurnoverFactor  =~  AssetTurnover
+              CashHoldingFactor    =~  CashHoldings 
+              SizeFactor           =~  Size
+              PerformanceFactor    =~  ROA +ROE 
+              
+              DiversificationFactor ~ AssetTurnoverFactor+ CashHoldingFactor+SizeFactor+PerformanceFactor
+              PerformanceFactor     ~ AssetTurnoverFactor+ CashHoldingFactor+SizeFactor
+              CashHoldingFactor     ~ AssetTurnoverFactor+ SizeFactor
+              
+            DiversificationFactor  ~~  0*CashHoldingFactor+0*SizeFactor+0*AssetTurnoverFactor+0*PerformanceFactor
+            PerformanceFactor      ~~  0*CashHoldingFactor+0*SizeFactor+0*AssetTurnoverFactor
+            AssetTurnoverFactor    ~~  0*CashHoldingFactor+0*SizeFactor
+            CashHoldingFactor      ~~  0*SizeFactor
+'
+
+
+CModel <- 'DiversificationFactor   =~  ProposedIndex + Shannon + IIHH  
+              AssetTurnoverFactor  =~  AssetTurnover
+              CashHoldingFactor    =~  CashHoldings 
+              SizeFactor           =~  Size
+              PerformanceFactor    =~  ROA+ROE  
+              
+              PerformanceFactor     ~ AssetTurnoverFactor+ CashHoldingFactor+SizeFactor
+           
+             
+            DiversificationFactor  ~~  0*CashHoldingFactor+0*SizeFactor+0*AssetTurnoverFactor+0*PerformanceFactor
+            PerformanceFactor      ~~  0*CashHoldingFactor+0*SizeFactor+0*AssetTurnoverFactor
+            AssetTurnoverFactor    ~~  0*CashHoldingFactor+0*SizeFactor
+            CashHoldingFactor      ~~  0*SizeFactor
+'
+TheoreticalThesis017 <- cfa(SThesisModel, data = Datos_Tesis2017,  std.lv=T, estimator="MLM", meanstructure=T)
+TheoreticalThesis014 <- cfa(SThesisModel, data = Datos_Tesis2014,  std.lv=T, estimator="MLM", meanstructure=T)
+
+MeasurementModel2017 <- cfa(MModel, data = Datos_Paper2017, std.lv=T, estimator="MLM", meanstructure=T)
+TheoreticalModel2017 <- cfa(TModel, data = Datos_Paper2017, std.lv=T, estimator="MLM", meanstructure=T)
+Constraint_Model2017 <- cfa(CModel, data = Datos_Paper2017, std.lv=T, estimator="MLM", meanstructure=T)
+UconstraintModel2017 <- cfa(UModel, data = Datos_Paper2017, std.lv=T, estimator="MLM", meanstructure=T)
+AlternativeModel2017 <- cfa(AModel, data = Datos_Paper2017, std.lv=T, estimator="MLM", meanstructure=T)
+
+MeasurementModel2014 <- cfa(MModel, data = Datos_Paper2014, std.lv=T, estimator="MLM", meanstructure=T)
+TheoreticalModel2014 <- cfa(TModel, data = Datos_Paper2014, std.lv=T, estimator="MLM", meanstructure=T)
+Constraint_Model2014 <- cfa(CModel, data = Datos_Paper2014, std.lv=T, estimator="MLM", meanstructure=T)
+UconstraintModel2014 <- cfa(UModel, data = Datos_Paper2014, std.lv=T, estimator="MLM", meanstructure=T)
+AlternativeModel2014 <- cfa(AModel, data = Datos_Paper2014, std.lv=T, estimator="MLM", meanstructure=T)
+
+##### MEASUREMENT MODEL
+
+#Basic statistics and Structure correlations 
+standardizedsolution(MeasurementModel2014)
+standardizedsolution(TheoreticalModel2014)
+fitmeasures(MeasurementModel2017)
+
+inspect(MeasurementModel2017, what="cor.all")[1:8,9:13]
+inspect(MeasurementModel2014, what="cor.all")[1:8,9:13]
+
+
+#Convergent Validity 
+summary(TheoreticalThesis017, ci=T, standardized=T, fit.measures=T)
+summary(TheoreticalThesis014, ci=T, standardized=T, fit.measures=T)
+
+summary(MeasurementModel2017, ci=T, standardized=T, fit.measures=T)
+summary(TheoreticalModel2017, ci=T, standardized=T, fit.measures=T)
+summary(UconstraintModel2017, ci=T, standardized=T, fit.measures=T)
+summary(Constraint_Model2017, ci=T, standardized=T, fit.measures=T)
+summary(AlternativeModel2017, ci=T, standardized=T, fit.measures=T)
+
+summary(MeasurementModel2014, ci=T, standardized=T, fit.measures=T)
+summary(TheoreticalModel2014, ci=T, standardized=T, fit.measures=T)
+summary(UconstraintModel2014, ci=T, standardized=T, fit.measures=T)
+summary(Constraint_Model2014, ci=T, standardized=T, fit.measures=T)
+summary(AlternativeModel2014, ci=T, standardized=T, fit.measures=T)
+
+#Discriminant Validity 
+discriminantValidity(MeasurementModel2017, cutoff = 0.8, merge = FALSE, level = 0.95)
+discriminantValidity(MeasurementModel2014, cutoff = 0.8, merge = FALSE, level = 0.95)
+
+##### STRUCTURAL MODEL
+
+# Residual Covariance Matrix both periods 
+lavResiduals(TheoreticalModel2017,type = "cor", drop.list.single.group = FALSE)
+lavResiduals(TheoreticalModel2014,type = "cor", drop.list.single.group = FALSE)
+
+#Criterion-related Validity 
+lavTestLRT(MeasurementModel2017, TheoreticalModel2017)
+lavTestLRT(TheoreticalModel2017, Constraint_Model2017)
+lavTestLRT(TheoreticalModel2017, UconstraintModel2017)
+lavTestLRT(TheoreticalModel2017, AlternativeModel2017)
+
+lavTestLRT(MeasurementModel2014, TheoreticalModel2014)
+lavTestLRT(TheoreticalModel2014, Constraint_Model2014)
+lavTestLRT(TheoreticalModel2014, UconstraintModel2014)
+lavTestLRT(TheoreticalModel2014, AlternativeModel2014)
+
+lavTestLRT(UconstraintModel2014, TheoreticalModel2014)
+
+#Path analysis
+semPaths(MeasurementModel2017)
+semPaths(TheoreticalModel2017)
+semPaths(Constraint_Model2017)
+semPaths(UconstraintModel2017)
+semPaths(Best_______Model2017)
+
+
+model2017.reliability <- round(reliability(CFAmodel2017, return.total = T), digits = 3)
+model2014.reliability <- round(reliability(CFAmodel2014, return.total = T), digits = 3)
+print(model2017.reliability)
+print(model2014.reliability)
+
+
+ModelTesis17 <- 'Factor Diversificacion  =~ IndicePropuesto + Shannon + IIHH 
+                 Factor Desempe?o           =~  Investrat'
+ModelTesis14 <- 'Factor Diversificacion  =~ IndicePropuesto + Shannon + IIHH 
+                 Factor Desempe?o           =~  Investrat'
+
+CFAmodelTesis17 <- cfa(ModelTesis17, data = Datos_Tesis2017, std.lv=T, estimator="MLM")
+CFAmodelTesis14 <- cfa(ModelTesis14, data = Datos_Tesis2014, std.lv=T, estimator="MLM")
+lavTestLRT(CFAmodelTesis17, CFAmodelTesis14)
+
+summary(CFAmodelTesis14, ci=T, standardized=T, fit.measures=T)
+summary(CFAmodelTesis17, ci=T, standardized=T, fit.measures=T)
+
+inspect(CFAmodelTesis17, what="cor.all")[1:4,5:6]
+inspect(CFAmodelTesis14, what="cor.all")[1:4,5:6]
