@@ -1,5 +1,5 @@
 ## Corporate Diversification 🧑‍🎓
-####### This research project is part of the Methodology Section of my PhD Dissertation about Corporate Diversification and Firm Performance.
+##### This research project is part of the Methodology Section of my PhD Dissertation about Corporate Diversification and Firm Performance.
 ##### A series of ML models are built to explore the relationship between relevant Business Features and Corporate Diversification.
 
 ## Project Description 📑
