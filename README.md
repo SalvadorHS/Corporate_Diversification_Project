@@ -1,26 +1,26 @@
 ## Corporate Diversification 🧑‍🎓
-##### This research project is part of the Methodology Section of my PhD Dissertation about Corporate Diversification and Firm Performance.
+###### This research project is part of the Methodology Section of my PhD Dissertation about Corporate Diversification and Firm Performance.
 ##### A series of ML models are built to explore the relationship between relevant Business Features and Corporate Diversification.
 
 ## Project Description 📑
-#### - The consensus about the theoretical and empirical nature of the relationship between performance and diversification has been studied from different methodological approaches. 
-#### 
-#### - Relevant Features:  
-####    - Firm Size
-####    - Cash Holdings
-####    - Asset Turnover
-####    - Return of Assets
-####    - Debt
-####    - QuickRatio
-#### -
+##### - The consensus about the theoretical and empirical nature of the relationship between performance and diversification has been studied from different methodological approaches. 
+##### 
+##### - Relevant Features:  
+#####    - Firm Size
+#####    - Cash Holdings
+#####    - Asset Turnover
+#####    - Return of Assets
+#####    - Debt
+#####    - QuickRatio
+##### -
 #### Motivation
 ##### The general objective is to elaborate a model with the best predictive performance that relates Corporate Diversification with Firm Performance 
 
 ## DATA SOURCE 📊
-#### - A random sample of 71 Mexican diversified companies for the periods 2014 and 2017 were selected. Financial firms were eliminated due to the regulatory constraints that might distort the analysis, however, industrial firms with financial segments were not excluded, as excluding these would eliminate very large diversified firms that operate a finance division. All diversified firms with complete data that traded through the time frame were included, since the three-year period was chosen to purposely allow companies to engage in corporate diversification and experience critical changes in corporate structure.
+##### - A random sample of 71 Mexican diversified companies were selected for the periods 2014 and 2017.  
+##### - Financial firms were eliminated due to the regulatory constraints that might distort the analysis, however, industrial firms with financial segments were not excluded, as excluding these would eliminate very large diversified firms that operate a finance division. 
+##### - All diversified firms with complete data that traded through the time frame were included, since the three-year period was chosen to purposely allow companies to engage in corporate diversification and experience critical changes in corporate structure.
 
-## DATA SOURCE 📊
-#### - A random sample of 71 Mexican diversified companies for the periods 2014 and 2017 were selected. Financial firms were eliminated due to the regulatory constraints that might distort the analysis, however, industrial firms with financial segments were not excluded, as excluding these would eliminate very large diversified firms that operate a finance division. All diversified firms with complete data that traded through the time frame were included, since the three-year period was chosen to purposely allow companies to engage in corporate diversification and experience critical changes in corporate structure.
 
 ## Built with 🛠️
 ### <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png"></code>
