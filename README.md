@@ -1,16 +1,16 @@
 ## Corporate Diversification 🧑‍🎓
-This research project is part of the Methodology Section of my PhD Dissertation about Corporate Diversification and Firm Performance.
-A series of ML models are built to explore the relationship between relevant Business Features and Corporate Diversification.
+* This research project is part of the Methodology Section of my PhD Dissertation about Corporate Diversification and Firm Performance.
+* A series of ML models are built to explore the relationship between relevant Business Features and Corporate Diversification.
 
 ## Project Description 📑
 The consensus about the theoretical and empirical nature of the relationship between performance and diversification has been studied from different methodological approaches. 
-Relevant Features:                                                                                                                                               
-  - Firm Size                                                                                                                                                     
+- Relevant Features:                                                                                                                                               
+    - Firm Size                                                                                                                                                     
   - Cash Holdings                                                                                                                                                 
-  - Asset Turnover
-  - Return of Assets
-  - Debt
-  - QuickRatio
+     - Asset Turnover
+    - Return of Assets
+    - Debt
+    - QuickRatio
 
 The general objective is to elaborate a model with the best predictive performance that relates Corporate Diversification with Firm Performance 
 
