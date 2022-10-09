@@ -4,13 +4,13 @@
 
 ## Project Description 📑
 ##### The consensus about the theoretical and empirical nature of the relationship between performance and diversification has been studied from different methodological approaches. 
-##### Relevant Features:                                                                                                                                               
-###### - Firm Size                                                                                                                                                     
-###### - Cash Holdings                                                                                                                                                 
-###### - Asset Turnover
-###### - Return of Assets
-###### - Debt
-###### - QuickRatio
+Relevant Features:                                                                                                                                               
+  - Firm Size                                                                                                                                                     
+  - Cash Holdings                                                                                                                                                 
+  - Asset Turnover
+  - Return of Assets
+  - Debt
+  - QuickRatio
 ##### Motivation                                                                                                                                                     The general objective is to elaborate a model with the best predictive performance that relates Corporate Diversification with Firm Performance 
 
 ## Data Source📊
