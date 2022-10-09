@@ -4,10 +4,13 @@
 
 ## Project Description 📑
 ##### The consensus about the theoretical and empirical nature of the relationship between performance and diversification has been studied from different methodological approaches. 
-##### Relevant Features:                                                                                                                                               ##### > - Firm Size                                                                                                                                                     ##### > - Cash Holdings                                                                                                                                                 ##### > - Asset Turnover
-##### > - Return of Assets
-##### > - Debt
-##### > - QuickRatio
+##### Relevant Features:                                                                                                                                               
+###### - Firm Size                                                                                                                                                     
+###### - Cash Holdings                                                                                                                                                 
+###### - Asset Turnover
+###### - Return of Assets
+###### - Debt
+###### - QuickRatio
 ##### Motivation                                                                                                                                                     The general objective is to elaborate a model with the best predictive performance that relates Corporate Diversification with Firm Performance 
 
 ## Data Source📊
@@ -26,6 +29,3 @@
 <code><img height="30" src="https://matplotlib.org/_static/logo2.svg"></code>
 </code>
 
-
-
-The research was centered on the relationship between corporate diversification and firm value. Three fundamental aspects were addressed: 1) the consensus about the theoretical and empirical nature of the relationship, 2) the study of the research context from an historical approach and 3) the proposal of a measure that quantifies the multivariable nature of corporate diversification. 
