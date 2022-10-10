@@ -23,12 +23,14 @@ The main goal is to elaborate a series of ML models with optimal tunned hyper-pa
 - All diversified firms with complete data that traded through the time frame were included, since the three-year period was chosen to purposely allow companies to engage in corporate diversification and experience critical changes in corporate structure.
 
 ## Findings 📈
+- The XGBoost Regressor outperformed all the algorithms for predicting Return on Assets in terms of Corporate Diversification.
 - Positive relationships with Corporate Diversification
     - Firm Size 
-    - Asset Turnover
+    - Debt
 - Negative relationships with Corporate Diversification
     - Return on Assets
     - Cash Holdings
+    - Asset Turnover
 
 ## Built with 🛠️
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png"></code>
